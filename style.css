@@ -1,0 +1,111 @@
+/* ===== VARIABLES DE COLOR Y ESTILO =====
+   Las defino una vez aquí arriba para no repetir códigos de color
+   por todo el archivo. Si luego quieres cambiar el verde, lo cambias
+   en un solo lugar y se actualiza todo el sitio. */
+:root {
+  --bg-start: #F0EAD9;      /* crema, arranca el degradado */
+  --bg-end: #D8E0C9;        /* verde salvia suave, termina el degradado */
+  --accent-dark: #1B4D3E;   /* verde bosque, para títulos y acentos */
+  --text-body: #3D3A34;     /* gris cálido oscuro, para texto normal */
+  --nav-bg: #FDFBF6;        /* casi blanco, fondo de la píldora del navbar */
+  --nav-bg-hover: #E8E2D0;  /* fondo del link cuando está activo/hover */
+}
+
+/* Reset básico: quita márgenes/paddings por defecto del navegador
+   para tener control total desde cero */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-body);
+  /* degradado diagonal de fondo, igual espíritu que la referencia */
+  background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
+  min-height: 100vh;
+}
+
+h1, h2 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  color: var(--accent-dark);
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed;      /* se queda flotando aunque hagas scroll */
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);  /* truco para centrarlo horizontalmente */
+  z-index: 100;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 4px;
+  background: var(--nav-bg);
+  padding: 8px;
+  border-radius: 999px;   /* número alto = bordes totalmente redondeados (píldora) */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.nav-link {
+  display: block;
+  text-decoration: none;
+  color: var(--text-body);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 10px 20px;
+  border-radius: 999px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-link:hover {
+  background: var(--nav-bg-hover);
+}
+
+/* Esta clase la va a mover el JS a la sección activa mientras scrolleas */
+.nav-link.active {
+  background: var(--accent-dark);
+  color: white;
+}
+
+/* ===== SECCIONES ===== */
+.section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10%;
+  scroll-margin-top: 100px; /* evita que el navbar tape el título al saltar con el link */
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 8vw, 6rem); /* tamaño responsivo: mínimo, ideal, máximo */
+  font-weight: 800;
+  line-height: 1;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-top: 16px;
+  max-width: 500px;
+}
+
+.section h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 16px;
+}
+
+/* ===== RESPONSIVE: pantallas chicas (celular) ===== */
+@media (max-width: 600px) {
+  .nav-list {
+    gap: 0;
+  }
+  .nav-link {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+}
