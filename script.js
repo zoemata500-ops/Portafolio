@@ -1,4 +1,4 @@
-// 1. Agarramos todos los links del navbar y todas las secciones
+ // 1. Agarramos todos los links del navbar y todas las secciones
 const navLinks = document.querySelectorAll('.nav-link');
 const sections = document.querySelectorAll('.section');
 
@@ -20,7 +20,7 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, {
-  threshold: 0.5 // se activa cuando el 50% de la sección es visible
+  threshold: 0.50  //se activa cuando el 50% de la sección es visible
 });
 
 // 3. Le decimos al observer que vigile cada sección
