@@ -1,61 +1,171 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!-- Avisa al navegador de que es un documento HTML5 -->
+<html lang="es"> <!-- Idioma de la página: español -->
+
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8"> <!-- Permite tildes y la ñ -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>I'm Zoe Mata — Portafolio</title>
-
-  <!-- Fuentes usadasde Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
+  <!-- Hace que la página se adapte al celular -->
+  <title>Zoe Mata | Portafolio</title> <!-- Texto que sale en la pestaña del navegador -->
+  <link rel="stylesheet" href="style.css"> <!-- Conecta el archivo de estilos -->
 </head>
+
 <body>
 
-  <!-- ===== NAVBAR ===== -->
-  <nav class="navbar">
-    <ul class="nav-list">
-      <li><a href="#inicio" class="nav-link active">Inicio</a></li>
-      <li><a href="#sobre-mi" class="nav-link">Sobre mí</a></li>
-      <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
-      <li><a href="#contacto" class="nav-link">Contacto</a></li>
-    </ul>
-  </nav>
+  <!-- ===== BARRA DE NAVEGACIÓN (navbar) ===== -->
+  <header class="navbar">
+    <div class="contenedor navbar-interior">
+      <a href="#inicio" class="logo">Zoe Mata</a>
 
-  <!-- ===== SECCIÓN: INICIO ===== -->
-  <section id="inicio" class="section hero">
-    <h1>I'm Zoe Mata.</h1>
-    <p class="hero-subtitle">Desarrollador en formación, aprendiendo a construir cosas para la web.</p>
-  </section>
+      <!-- Botón de hamburguesa: solo se ve en celular (lo controla el CSS) -->
+      <button id="boton-menu" class="boton-menu" aria-label="Abrir menú">☰</button>
 
-  <!-- ===== SECCIÓN: SOBRE MÍ ===== -->
-  <section id="sobre-mi" class="section">
-    <h2>About Me</h2>
-    <p>Curious by nature, engineer by training. I studied Industrial Production Engineering and now I'm diving into the world of software — frontend, backend, and everything in between. Building with JavaScript, HTML & CSS while expanding my stack.</p>
-    <h3>Languages</h3>
-    <p></p>
-    <section class="languages">
+      <!-- Enlaces ancla: el href="#id" lleva a la sección con ese id -->
+      <nav id="menu" class="menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
 
-      <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript Badge">
-      <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5 Badge">
-      <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3 Badge">    
+  <!-- <main> contiene el contenido principal de la página -->
+  <main>
+
+    <!-- ===== INICIO ===== -->
+    <section id="inicio" class="seccion">
+      <div class="contenedor hero">
+        <div class="hero-texto">
+          <h1>Hola, soy Pablo Zoe Mata Nuñez</h1>
+          <p class="subtitulo">Egrasado de la carrera PI</p>
+          <!-- CAMBIA: escribe aquí tu presentación con tus palabras -->
+          <p>busco desarrollarme en el area de desarrollo de software, buscando oprtunidades para crecer y aprender</p>
+
+          <div class="botones">
+            <!-- target="_blank" abre el PDF en otra pestaña (ver) -->
+            <a href="cv.pdf" target="_blank" rel="noopener noreferrer" class="boton">Ver CV</a>
+    
+            <a href="cv.pdf" download class="boton boton-borde">Descargar CV</a>
+          </div>
+        </div>
+
+        <!-- CAMBIA: guarda tu foto en la carpeta img con el nombre foto.jpg -->
+        <img src="img/mifoto.webp" alt="Foto de Zoe Mata" class="foto">
+      </div>
     </section>
-  </section>
 
-  <!-- ===== SECCIÓN: PROYECTOS ===== -->
-  <section id="proyectos" class="section">
-    <h2>Projects</h2>
-    <p>Aquí van las tarjetas.</p>
-  </section>
+    <!-- ===== SOBRE MÍ ===== -->
+    <section id="sobre-mi" class="seccion">
+      <div class="contenedor">
+        <h2>Sobre mí</h2>
+        <!-- CAMBIA: cuenta qué estudiaste y qué te gusta -->
+        <p>Egresado de la ingenieria de Produccion industrial, me considero una persona apasionada por el desarrollo de software. me gusta resolver problemas de manera creativa y practica. </p>
 
-  <!-- ===== SECCIÓN: CONTACTO ===== -->
-  <section id="contacto" class="section">
-    <h2>Contact</h2>
-    <p>correo, 
-      <a class="contact-link" href="https://github.com/zoemata500-ops" target="_blank" rel="noopener noreferrer">GitHub</a>, LinkedIn.</p>
-  </section>
+        <div class="bloques">
+          <div class="bloque">
+            <h3>Tecnologías que sé</h3>
+            <ul class="etiquetas">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>Node.js</li>
+              <li>PostgreSQL</li>
+              <li>Git</li>
+              <li>Figma</li>
 
+            </ul>
+          </div>
+
+          <div class="bloque">
+            <h3>Lo que estoy aprendiendo</h3>
+            <ul class="etiquetas">
+              <li>C++</li>
+              <li>React</li>
+              <li>JAVA</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROYECTOS ===== -->
+    <section id="proyectos" class="seccion">
+      <div class="contenedor">
+        <h2>Proyectos</h2>
+
+        <div class="cuadricula">
+
+          <!-- Cada proyecto es una tarjeta. <article> = contenido que tiene sentido por sí solo -->
+          <article class="tarjeta">
+            <div class="tarjeta-imagen">
+              <iframe src="https://www.youtube.com/embed/Lc9Pby3z0PU"
+                title="Demo de proyecto tarjetas de vocabulario en inglés con NFC" allowfullscreen
+                loading="lazy"></iframe>
+            </div>
+            <div class="tarjeta-cuerpo">
+              <h3>Vocabulario en inglés con NFC</h3>
+              <p class="descripcion">Aplicación web conectada a etiquetas NFC para aprender vocabulario en inglés, con
+                traducción, definición, ejemplos y audio.</p>
+              <ul class="etiquetas">
+                <li>Node.js</li>
+                <li>PostgreSQL</li>
+                <li>JavaScript</li>
+              </ul>
+            </div>
+            <div class="tarjeta-enlaces">
+              <a href="https://tarjetasingles.onrender.com/tarjeta.html?id=1" target="_blank"
+                rel="noopener noreferrer">Ver demo</a>
+              <!-- CAMBIA: pon el enlace del repositorio de este proyecto -->
+              <a href="https://github.com/zoemata500-ops" target="_blank" rel="noopener noreferrer">Ver código en
+                GitHub</a>
+            </div>
+          </article>
+
+          <article class="tarjeta">
+            <div class="tarjeta-imagen">Aquí irá el carrusel</div>
+            <div class="tarjeta-cuerpo">
+              <h3>Proyecto 2</h3>
+              <p class="descripcion">Próximamente.</p>
+            </div>
+          </article>
+
+          <article class="tarjeta">
+            <div class="tarjeta-imagen">Aquí irá el carrusel</div>
+            <div class="tarjeta-cuerpo">
+              <h3>Proyecto 3</h3>
+              <p class="descripcion">Próximamente.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section id="contacto" class="seccion">
+      <div class="contenedor">
+        <h2>Contacto</h2>
+        <p>Escríbeme o revisa mi código:</p>
+
+        <ul class="enlaces-contacto">
+          <!-- CAMBIA: tu correo real. mailto: abre el programa de correo -->
+          <li><a href="mailto:zoemata400@gmail.com">Correo</a></li>
+          <li><a href="https://github.com/zoemata500-ops" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <!-- CAMBIA: tu perfil real de LinkedIn -->
+          <li><a href="https://www.linkedin.com/in/tu-usuario" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+
+  </footer>
+
+  <!-- El script va al final para que el HTML ya exista cuando JavaScript lo busque -->
   <script src="script.js"></script>
 </body>
+
 </html>
