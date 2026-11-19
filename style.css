@@ -199,8 +199,7 @@ main {
 .foto {
   width: 100%;
   max-width: 320px;
-  aspect-ratio: 1 / 1;    /* cuadrada */
-  object-fit: cover;      /* recorta la foto sin deformarla */
+  height: auto;
   border-radius: 12px;
   border: 1px solid var(--borde);
   background: var(--gris-claro); /* se ve esta caja si la foto aún no existe */
